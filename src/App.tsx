@@ -94,6 +94,16 @@ function App() {
     }
   }
 
+  const DoneMessage = () => {
+    if (bytesTransfered === bytestToTransfer 
+      && currentIndex === allFiles
+      && currentIndex > 0
+      && bytesTransfered > 0
+      )
+      return <p>👍 Wysłane</p>
+    else return <p></p>
+  }
+
   return <div>
     <h1>Wyślij do Tomka :)</h1>
 
@@ -108,12 +118,13 @@ function App() {
     <ProgressCounter currentState={currentIndex} maxState={allFiles}></ProgressCounter>
     <ProgressBar maxValue={bytestToTransfer} state={bytesTransfered}></ProgressBar>
 
+    {DoneMessage()}
+
     <button onClick={upload}>
-      Wyślij Plik
+      Wyślij Pliki
     </button>
 
     <ErrorMessage message={errorMessage} />
-
     <CollapsedTextBox buttonText='Wyświetl klucz' content={accessString} />
 
   </div>
