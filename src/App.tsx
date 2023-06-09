@@ -6,6 +6,7 @@ import { ErrorMessage } from './components/ErrorMessage';
 import { ProgressBar } from './components/ProgressBar';
 import { ProgressCounter } from './components/ProgressCounter';
 import { Buffer } from 'buffer'
+import { KeyEncoder } from './components/KeyEncoder';
 
 
 function App() {
@@ -127,6 +128,8 @@ function App() {
     <ErrorMessage message={errorMessage} />
     <CollapsedTextBox buttonText='Wyświetl klucz' content={accessString} />
 
+    <KeyEncoder></KeyEncoder>
+    
   </div>
 
 }
